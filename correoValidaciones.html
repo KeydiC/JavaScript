@@ -1,0 +1,38 @@
+<!---Hecho por Keydi Giselle Ceron De Angel y Maria Jose Hernandez Lopez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>si</title>
+<script>
+function validaciones(){
+    var correo=prompt("Ingresa tu correo: ");
+
+    if (correo==null){
+        alert("Sin ingresar correo");
+        return;
+    }
+    var arroba=correo.indexOf('@');
+    var punto=correo.indexOf('.', arroba);
+    
+    if(arroba>0&&arroba<correo.length-1&&punto>arroba+2&&punto<correo.length-1&&correo.indexOf('@', arroba+1)==-1&&correo.indexOf('.')!==-1&&punto-arroba>2&&arroba>2&&correo.length-arroba>3&&
+        NumLetra(correo[arroba-1])&& 
+        NumLetra(correo[arroba+1])&& 
+        NumLetra(correo[punto+1])){ 
+        alert("Tu correo fue registrado");
+    }else{
+        alert("El correo no es valido, ingresa tu correo: ");
+        validaciones(); 
+    }
+}
+
+function NumLetra(carac){
+    return(carac>='a'&&carac<='z')||(carac>='A'&&carac<='Z')||(carac>='0'&&carac<='9');
+}
+validaciones();
+</script>
+</head>
+<body>
+</body>
+</html>
